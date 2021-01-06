@@ -1,0 +1,21 @@
+{
+    "name": "antlur/capo-source-wordpress",
+    "description": "Get remote wordpress data",
+    "type": "library",
+    "require": {
+        "antlur/capo": "~0.0.8"
+    },
+    "authors": [
+        {
+            "name": "Anthony Holmes",
+            "email": "anthony@antlur.co"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "CapoSourceWordpress\\": "src/"
+        }
+    }
+}
