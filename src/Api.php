@@ -148,7 +148,7 @@ class Api
         return json_decode($body);
     }
     
-    private function getCached(string $filename): ?array
+    private function getCached(string $filename)
     {
         $cacheFilePath = $this->cacheDir . '/' . $filename;
 
