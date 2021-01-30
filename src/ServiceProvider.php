@@ -2,11 +2,11 @@
 
 namespace CapoSourceWordpress;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Capo\Services\Config;
 use Illuminate\Support\Facades\File;
 
-class CapoSourceWordpressServiceProvider extends ServiceProvider
+class ServiceProvider extends LaravelServiceProvider
 {
     /**
      * Register any application services.
@@ -22,9 +22,5 @@ class CapoSourceWordpressServiceProvider extends ServiceProvider
         $this->app->singleton(Api::class, function ($app) use ($options) {
             return new Api($options['baseUrl']);
         });
-        
-        $api = app(Api::class);
-
-        $api->getPages();
     }
 }

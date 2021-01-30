@@ -8,7 +8,7 @@ class Plugin extends BasePlugin
 {
     public function __construct(array $options = [])
     {
-        $this->serviceProvider = CapoSourceWordpressServiceProvider::class;
+        $this->serviceProvider = ServiceProvider::class;
 
         $this->options = $options;
     }
