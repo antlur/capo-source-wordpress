@@ -128,6 +128,25 @@ class Api
 
         return $posts;
     }
+
+    public function getAcfOptions(string $option)
+    {
+        $filename = 'acf.' . $option . '.json';
+    
+        $cached = $this->getCached($filename);
+    
+        if ($cached) {
+            return $cached;
+        }
+    
+        $res = $this->client->get('acf/v3/options/' . $option);
+    
+        $body = (string) $res->getBody();
+    
+        File::put($this->cacheDir . '/' . $filename, $body);
+    
+        return json_decode($body);
+    }
     
     private function getCached(string $filename): ?array
     {
